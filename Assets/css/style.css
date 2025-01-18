@@ -1,32 +1,62 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white;
-    color: black;
+    background-color: rgb(252, 60, 169);
+    color: white;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    transition: background-image 1s ease-in-out;
 }
 
 header {
-    background-color: rgb(252, 60, 169);
+    background-color: transparent;
     padding: 10px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 #logo {
     margin-left: 20px;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    z-index: 1001;
 }
 
 #logo img {
-    width: 100px; /* Adjust based on your logo size */
-    height: auto;
+    width: auto; /* Changed from fixed width to auto */
+    height: 100px; /* Match the height of the Instagram link */
+    max-width: 100%; /* Ensure it doesn't exceed its container */
+}
+
+#instagram-link {
+    margin-right: 20px;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 1002;
+}
+
+#instagram-link img {
+    width: auto; /* Changed from fixed width to auto */
+    height: 100px; /* Assuming this is the desired height */
+    max-width: 100%; /* Ensure it doesn't exceed its container */
 }
 
 nav {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
+    position: fixed;
+    top: 50px;
+    left: 50%; 
+    transform: translateX(calc(-50% - 5px)); /* Shift slightly left by 5 pixels */
+    z-index: 1001; 
 }
 
 nav ul {
@@ -34,42 +64,83 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: space-around;
-    width: 100%;
+    justify-content: center;
+    width: auto;
 }
 
+/* Adjust spacing between navigation items */
 nav ul li {
-    margin: 0;
+    margin: 0 45px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: rgb(252, 60, 169);
     padding: 10px 15px;
-    border: 2px solid white;
+    border: 2px solid rgb(252, 60, 169);
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 nav ul li a:hover {
-    background-color: white;
-    color: rgb(252, 60, 169);
+    background-color: rgb(252, 60, 169);
+    color: white;
 }
 
 main {
-    padding: 20px;
+    padding-top: 70px; /* Space for the fixed header, adjust if necessary */
+    z-index: 1;
+    position: relative;
+}
+
+.cool-title {
+    position: absolute;
+    top: 50%; /* Vertical centering */
+    left: 5%; /* Middle left of the page */
+    transform: translateY(-50%); /* Adjust for half the height */
+    font-size: 48px; /* Increased font size for a more luxurious look */
+    white-space: nowrap;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow for depth */
+    letter-spacing: 2px; /* For a more luxurious spacing */
+    font-weight: 700; /* Bolder text for emphasis */
+    z-index: 4; /* Ensure it's above other content */
+}
+
+.cool-title span {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 1;
+    display: inline-block;
+    margin-right: 10px; /* Reduced spacing between texts */
 }
 
 footer {
-    background-color: rgb(252, 60, 169);
-    color: white;
+    background-color: white;
+    color: rgb(252, 60, 169);
     text-align: center;
     padding: 10px 0;
-    position: fixed;
+    position: fixed; 
     width: 100%;
     bottom: 0;
+    left: 0;
+    z-index: 5;
 }
 
 footer a {
-    color: white;
+    color: rgb(252, 60, 169);
+}
+
+.content-wrapper {
+    position: relative;
+    min-height: calc(100vh - 80px); /* Adjusted for both header and footer height */
+    padding-bottom: 40px; /* Ensure content doesn't go under footer */
+    padding-top: 70px; /* Space for the fixed header */
+}
+
+/* Include the Montserrat font from Google Fonts with additional weights */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 }
