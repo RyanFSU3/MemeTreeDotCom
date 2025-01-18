@@ -7,26 +7,62 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <div id="logo">
-            <img src="assets/images/logo1.png" alt="MemeTreeDotCom Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about-me.html">About Me</a></li>
-                <li><a href="upcoming-events.html">Upcoming Events</a></li>
-                <li><a href="art.html">Art</a></li>
-                <li><a href="kandi-jewelry.html">Kandi Jewelry</a></li>
-                <li><a href="contact-me.html">Contact Me</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <!-- Main content goes here -->
-    </main>
+    <div class="content-wrapper">
+        <header>
+            <div id="logo">
+                <img src="assets/images/logo1.png" alt="MemeTreeDotCom Logo">
+            </div>
+            <div id="instagram-link">
+                <a href="https://www.instagram.com/meme_tree_dot_com/" target="_blank">
+                    <img src="assets/images/784455451a6f3a592fd983663a07f8b2.png" alt="Instagram Link">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-me.html">About Me</a></li>
+                    <li><a href="upcoming-events.html">Upcoming Events</a></li>
+                    <li><a href="art.html">Art</a></li>
+                    <li><a href="kandi-jewelry.html">Kandi Jewelry</a></li>
+                    <li><a href="contact-me.html">Contact Me</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div id="cool-title" class="cool-title">
+                <span id="digital-art">Digital Art.</span>
+                <span id="hand-crafted-jewelry" style="display: none;">Hand-Crafted Jewelry.</span>
+                <span id="custom-prints" style="display: none;">Custom Prints.</span>
+            </div>
+            <!-- Add some content here to ensure the page has enough height -->
+            <div style="min-height: 1000px;"></div> <!-- This div adds scrollable content -->
+        </main>
+    </div>
     <footer>
         <p>Contact: <a href="mailto:memetreedotcomshop@gmail.com">memetreedotcomshop@gmail.com</a></p>
     </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Array of background images
+        const backgrounds = [
+            'assets/images/background1.jpg',
+            'assets/images/background2.jpg',
+            'assets/images/background3.jpg',
+            'assets/images/background4.jpg'
+        ];
+
+        // Function to change the background image
+        function changeBackground() {
+            const randomIndex = Math.floor(Math.random() * backgrounds.length);
+            document.body.style.backgroundImage = `url(${backgrounds[randomIndex]})`;
+        }
+
+        // Change the background image every 5 seconds
+        setInterval(changeBackground, 5000);
+
+        // Initial call to set the first background image
+        changeBackground();
+    </script>
 </body>
 </html>
