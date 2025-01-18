@@ -37,10 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Array of background images
 const backgrounds = [
-    '/assets/images/background1.jpg',
-    '/assets/images/background2.jpg',
-    '/assets/images/background3.jpg',
-    '/assets/images/background4.jpg'
+    '/assets/images/Background1.jpg',
+    '/assets/images/Background2.jpg',
+    '/assets/images/Background3.jpg',
+    '/assets/images/Background4.jpg'
 ];
 
 // Function to change the background image
